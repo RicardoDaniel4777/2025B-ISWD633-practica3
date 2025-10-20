@@ -17,9 +17,16 @@ docker run -d --name <nombre contenedor> --mount type=bind,source=<ruta carpeta 
 ### Crear un contenedor con la imagen nginx:alpine, mapear todos por puertos, para la ruta carpeta host colocar el directorio en donde se encuentra la carpeta html en tu computador y para la ruta carpeta contenedor: /usr/share/nginx/html (esta ruta se obtiene al revisar la documentación de la imagen)
 ![Volúmenes](volumen-host.PNG)
 # COMPLETAR CON EL COMANDO
+```
+docker run -d --name mynginx -p 8080:80 -v "C:\Users\Ricardo\Documents\nginx\html:/usr/share/nginx/html:ro" nginx:alpine
+```
 
 ### ¿Qué sucede al ingresar al servidor de nginx?
 # COMPLETAR CON LA RESPUESTA A LA PREGUNTA
+
+Al colocar la dirección del localhost y el puerto en mi barra de busqueda de mi navegador ingreso normalmente al html que puse al inicio de la práctica, como se muestra en la imagen.
+<img width="1916" height="1142" alt="image" src="https://github.com/user-attachments/assets/9c6240bf-ffea-4a3c-aa52-6e2658d16063" />
+
 
 ### ¿Qué pasa con el archivo index.html del contenedor?
 # COMPLETAR CON LA RESPUESTA A LA PREGUNTA
