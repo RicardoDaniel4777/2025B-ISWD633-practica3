@@ -22,23 +22,34 @@ docker run -d --name mynginx -p 8080:80 -v "C:\Users\Ricardo\Documents\nginx\htm
 ```
 
 ### ¿Qué sucede al ingresar al servidor de nginx?
-# COMPLETAR CON LA RESPUESTA A LA PREGUNTA
 
 Al colocar la dirección del localhost y el puerto en mi barra de busqueda de mi navegador ingreso normalmente al html que puse al inicio de la práctica, como se muestra en la imagen.
 <img width="1916" height="1142" alt="image" src="https://github.com/user-attachments/assets/9c6240bf-ffea-4a3c-aa52-6e2658d16063" />
 
 
 ### ¿Qué pasa con el archivo index.html del contenedor?
-# COMPLETAR CON LA RESPUESTA A LA PREGUNTA
+
+El index.html que viene dentro de la imagen no es eliminado de la imagen, pero queda oculto por el bind mount: al montar la carpeta del host sobre /usr/share/nginx/html, el contenido original de esa ruta en el contenedor no es visible mientras exista el montaje.
 
 ### Ir a https://html5up.net/ y descargar un template gratuito, descomprirlo dentro de tu computador en la carpeta html
 ### ¿Qué sucede al ingresar al servidor de nginx?
-# COMPLETAR CON LA RESPUESTA A LA PREGUNTA
+
+Al recargar http://localhost:8080 se muestra el template completo (HTML, CSS, imágenes) servido por nginx, porque ahora en la carpeta del host hay archivos del template que el servidor web entrega. 
+
+<img width="1877" height="1125" alt="image" src="https://github.com/user-attachments/assets/9d62a5f5-7efd-4d5f-97e5-2b4ef6e917e5" />
+
 
 ### Eliminar el contenedor
-# COMPLETAR CON EL COMANDO
+
+```
+docker rm -f mynginx
+```
+
+<img width="471" height="64" alt="image" src="https://github.com/user-attachments/assets/06278a61-351b-47fb-9ec5-757d593d382e" />
+
 
 ### ¿Qué sucede al crear nuevamente un contenedor montado al directorio definidos anteriormente?
-# COMPLETAR CON LA RESPUESTA A LA PREGUNTA
+
+Al crear otro contenedor con el mismo bind mount, nginx volverá a servir los mismos archivos que están en la carpeta del host (~/nginx/html). Es decir: El contenido del host perdura aunque elimines el contenedor.
 
 
