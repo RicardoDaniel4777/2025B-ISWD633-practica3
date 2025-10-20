@@ -62,6 +62,12 @@ docker run -d --name client-postgres --publish published=9500,target=80 -e PGADM
 
 ### Crear los volúmenes necesarios para drupal, esto se puede encontrar en la documentación
 ### COMPLETAR CON LOS COMANDOS
+```
+docker volume create vol-drupal-modules
+docker volume create vol-drupal-profiles
+docker volume create vol-drupal-themes
+docker volume create vol-drupal-sites
+```
 
 ### Crear el contenedor server-drupal vinculado a la red, usar la imagen drupal, y vincularlo a los volúmenes nombrados
 ```
@@ -74,6 +80,9 @@ docker run -d --name server-drupal --publish published=9700,target=80 -v <nombre
 _La instalación puede tomar varios minutos, mientras espera realice un diagrama de los contenedores que ha creado en este apartado._
 
 # COMPLETAR CON EL DIAGRAMA SOLICITADO
+El siguiente diagrama fue realizado con inteligencia artificial.
+<img width="643" height="397" alt="image" src="https://github.com/user-attachments/assets/48cdbffe-c2b4-4877-9bd2-fc1cf39526ab" />
+
 
 ### Eliminar un volumen específico
 ```
